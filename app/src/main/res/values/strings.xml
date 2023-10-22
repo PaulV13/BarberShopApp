@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BarberShopApp</string>
+    <string name="login">Login</string>
+    <string name="createAccount">Create an account</string>
+    <string name="imageBarberDescription">Image barber logo</string>
+    <string name="registerFragment">Register</string>
+    <string name="loginFragment">Login</string>
+</resources>
