@@ -7,40 +7,14 @@
     android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
-    <ImageView
-        android:id="@+id/imageBarber"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:src="@drawable/barber"
-        android:layout_marginHorizontal="32dp"
-        app:layout_constraintVertical_bias="0.4"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="@string/imageBarberDescription" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/orange"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageBarber"
-        app:layout_constraintEnd_toEndOf="parent"
         />
-
-    <TextView
-        android:id="@+id/tvCreateAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/createAccount"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
-        app:layout_constraintEnd_toEndOf="@id/btnLogin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

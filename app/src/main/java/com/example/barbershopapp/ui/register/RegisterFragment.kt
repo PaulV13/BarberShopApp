@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.barbershopapp.R
+import androidx.navigation.fragment.findNavController
 import com.example.barbershopapp.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -19,5 +19,13 @@ class RegisterFragment : Fragment() {
     ): View {
         _binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.tvLogIn.setOnClickListener {
+            findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+        }
     }
 }

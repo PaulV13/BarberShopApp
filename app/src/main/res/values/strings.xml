@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">BarberShopApp</string>
     <string name="login">Login</string>
-    <string name="createAccount">Create an account</string>
-    <string name="imageBarberDescription">Image barber logo</string>
+    <string name="signUp">Sign Up</string>
+    <string name="tvNotHaveAccount">Don\'t have an account?</string>
+    <string name="tvHaveAccount">Already have an account?</string>
     <string name="registerFragment">Register</string>
     <string name="loginFragment">Login</string>
+    <string name="labelName">Name</string>
+    <string name="labelEmail">Email</string>
+    <string name="labelPhone">Phone</string>
+    <string name="labelPassword">Password</string>
+    <string name="btnFacebookDescription">Icon Facebook</string>
+    <string name="btnGoogleDescription">Icon Google</string>
+    <string name="btnTwitterDescription">Icon Twitter</string>
+    <string name="ourSignInContent">--- our sign in with ---</string>
 </resources>

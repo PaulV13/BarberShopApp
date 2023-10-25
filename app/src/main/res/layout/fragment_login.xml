@@ -1,19 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.login.LoginFragment">
+    android:background="@color/white"
+    android:paddingHorizontal="32dp"
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
+        android:id="@+id/tvLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@id/etName"
         android:text="@string/login"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textInputEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputEmail"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/labelEmail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/labelPassword"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEmail">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button"
+        android:text="@string/login"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputPassword" />
+
+    <TextView
+        android:id="@+id/ourSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ourSignInContent"
+        app:layout_constraintBottom_toTopOf="@+id/btnFacebook"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogIn"
+        app:layout_constraintStart_toStartOf="@+id/btnLogIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogIn" />
+
+    <ImageView
+        android:id="@+id/btnFacebook"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/btnFacebookDescription"
+        android:src="@drawable/facebook"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
+        app:layout_constraintEnd_toStartOf="@+id/btnGoogle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnGoogle" />
+
+    <ImageView
+        android:id="@+id/btnGoogle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/btnGoogleDescription"
+        android:src="@drawable/google"
+        app:layout_constraintBottom_toTopOf="@+id/tvCreateAccount"
+        app:layout_constraintEnd_toStartOf="@+id/btnTwitter"
+        app:layout_constraintStart_toEndOf="@+id/btnFacebook"
+        app:layout_constraintTop_toBottomOf="@+id/ourSignUp" />
+
+    <ImageView
+        android:id="@+id/btnTwitter"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/btnTwitterDescription"
+        android:src="@drawable/twitter"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnGoogle"
+        app:layout_constraintTop_toTopOf="@+id/btnGoogle" />
+
+    <TextView
+        android:id="@+id/tvCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/tvNotHaveAccount"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/tvSignUp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/signUp"
+        android:textStyle="bold"
+        android:textColor="@color/orange"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCreateAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
