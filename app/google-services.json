@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819696085241",
+    "project_id": "barbershopapp-49659",
+    "storage_bucket": "barbershopapp-49659.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819696085241:android:21f8b91534270546969a28",
+        "android_client_info": {
+          "package_name": "com.example.barbershopapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB41PHfdKNZHC-TpghC-2bk9kwNH7YvzE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
