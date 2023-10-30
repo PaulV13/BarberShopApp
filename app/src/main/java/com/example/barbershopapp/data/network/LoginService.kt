@@ -8,7 +8,7 @@ import javax.inject.Inject
 class LoginService @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) {
-    suspend fun loginUser(email: String, password: String): LoginResult{
+    suspend fun loginUser(email: String, password: String): LoginResult {
         val result = try {
             firebaseAuth.signInWithEmailAndPassword(email, password).await()
         }catch (e: Exception){

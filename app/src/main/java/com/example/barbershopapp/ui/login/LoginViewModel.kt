@@ -1,5 +1,6 @@
 package com.example.barbershopapp.ui.login
 
+import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,12 +17,10 @@ class LoginViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _userEmail = MutableLiveData<String>()
-    val userEmail: LiveData<String>
-        get() = _userEmail
+    val userEmail: LiveData<String> get() = _userEmail
 
     private val _errorMessage = MutableLiveData<String>()
-    val errorMessage: LiveData<String>
-        get() = _errorMessage
+    val errorMessage: LiveData<String> get() = _errorMessage
 
     fun login(email: String, password: String) {
         viewModelScope.launch {
