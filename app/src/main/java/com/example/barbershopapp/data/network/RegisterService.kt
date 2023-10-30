@@ -1,6 +1,6 @@
 package com.example.barbershopapp.data.network
 
-import com.example.barbershopapp.data.response.LoginResult
+import com.example.barbershopapp.data.response.RegisterResult
 import com.example.barbershopapp.domain.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -11,11 +11,11 @@ class RegisterService @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
     private val db: FirebaseFirestore
 ) {
-    suspend fun registerUser(user: User): LoginResult {
+    suspend fun registerUser(user: User): RegisterResult {
         val result = try {
            firebaseAuth.createUserWithEmailAndPassword(user.email, user.password).await()
         }catch (e: Exception){
-            return LoginResult.Error
+            return RegisterResult.Error
         }
 
         val newUser = hashMapOf(
@@ -27,6 +27,6 @@ class RegisterService @Inject constructor(
             .document(user.email)
             .set(newUser)
 
-        return LoginResult.Success(result?.user?.isEmailVerified ?: false)
+        return RegisterResult.Success(result?.user?.isEmailVerified ?: false)
     }
 }

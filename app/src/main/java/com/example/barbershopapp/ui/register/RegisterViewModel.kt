@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.barbershopapp.data.response.LoginResult
+import com.example.barbershopapp.data.response.RegisterResult
 import com.example.barbershopapp.data.usecase.Register
 import com.example.barbershopapp.domain.User
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,8 +28,8 @@ class RegisterViewModel @Inject constructor(
     fun register(user: User) {
         viewModelScope.launch {
             when (registerUseCase(user)) {
-                LoginResult.Error -> _errorMessage.value = "Credential invalid!!!"
-                is LoginResult.Success -> _userEmail.value = user.email
+                RegisterResult.Error -> _errorMessage.value = "Credential invalid!!!"
+                is RegisterResult.Success -> _userEmail.value = user.email
             }
         }
     }
