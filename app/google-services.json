@@ -12,15 +12,33 @@
           "package_name": "com.example.barbershopapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "819696085241-q00p90l789a2u1av4nh5u7hhfthv42bd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.barbershopapp",
+            "certificate_hash": "d2661725822a69c97bf3f4c8408293a0de765317"
+          }
+        },
+        {
+          "client_id": "819696085241-4ieadbvgn6vvnt96pqevt1ir6ih4qc8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyB41PHfdKNZHC-TpghC-2bk9kwNH7YvzE4"
+          "current_key": "AIzaSyD0go_X6DpLO0zQwa5Xlx_rOCtgaeMHEBs"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819696085241-4ieadbvgn6vvnt96pqevt1ir6ih4qc8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

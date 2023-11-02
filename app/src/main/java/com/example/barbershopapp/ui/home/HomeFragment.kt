@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.barbershopapp.databinding.FragmentHomeBinding
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -21,6 +21,8 @@ class HomeFragment: Fragment() {
 
     @Inject
     lateinit var auth: FirebaseAuth
+
+    private lateinit var signInClient: SignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +43,13 @@ class HomeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val user = auth.currentUser
+        signInClient = Identity.getSignInClient(requireContext())
+
         binding.tvHome.text = if (user!=null) user.email else ""
 
         binding.bntLogout.setOnClickListener {
             auth.signOut()
+            signInClient.signOut()
             if(auth.currentUser == null){
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
             }
